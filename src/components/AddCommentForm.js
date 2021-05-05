@@ -9,7 +9,7 @@ function AddCommentForm({ setArticleInfo, articleName }) {
     const [commentText, setCommentText] = useState("");
 
     const addCommnet = async () => {
-        const result = await fetch(`/api/articles/${articleName}/add-comment`, {
+        const result = await fetch(`https://my-blog-mern.herokuapp.com/api/articles/${articleName}/add-comment`, {
             method: 'post',
             body: JSON.stringify({ username, text: commentText }),
             headers: {

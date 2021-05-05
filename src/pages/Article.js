@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import articleSource from './Article-content';
-import ArticlesList from '../components/ArticlesList'
 import CommentsList from "../components/CommentsList";
 import UpvotesSection from '../components/UpvotesSection'
 import AddCommentForm from "../components/AddCommentForm";
@@ -18,11 +17,9 @@ function Article({ match }) {
     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
 
     useEffect(() => {
-
         const fetchData = async () => {
-            const result = await fetch(`/api/articles/${name}`)
+            const result = await fetch(`https://my-blog-mern.herokuapp.com/api/articles/${name}`)
             const body = await result.json();
-
             setArticleInfo(body);
         }
 
