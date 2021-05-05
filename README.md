@@ -1,7 +1,13 @@
 # My-Blog-MERN
-A simple basic App that I have created to learn React.Js, Node.js and MongoDB
+<p align="center">
+  <strong>A simple basic App that I have created to learn React.Js, Node.js and MongoDB which performs some of the basic CRUD operations🚀</strong>
+</p>
 
-Website: https://kind-wozniak-2dcbb9.netlify.app/
+<h3>
+Visit the Website:
+</h3> 
+https://kind-wozniak-2dcbb9.netlify.app/
+
 
 ## Available Scripts
 
