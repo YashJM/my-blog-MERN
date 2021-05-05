@@ -1,7 +1,6 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
 import List from '@material-ui/core/List';
@@ -21,11 +20,9 @@ function About() {
             </Typography>
 
             <Typography variant="subtitle1">
-                I am a Passionate Web Developer, Programmer, Designer and a Gamer!
+                I am a Web Developer, Programmer, Designer and a Gamer!
             </Typography>
-            <Box p={2}>
-            </Box>
-
+            <Box p={2}></Box>
             <Typography variant="h4" component="h2">
                 Find out more about me
             </Typography>

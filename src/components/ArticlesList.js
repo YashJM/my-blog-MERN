@@ -9,20 +9,18 @@ function ArticlesList({ articles }) {
     return (
         <Container maxWidth="sm" text>
             <Typography variant="h3" component="h2">
-                Current Articles
+                Recent Articles
                 <Box p={2}>
                 </Box>
             </Typography>
-            {   articles.map((article, key) => (
+            {articles.map((article, key) => (
                 <Link component="p" >
                     <Typography variant="h4" component="h4"> {article.title} </Typography> <p> {article.content[0].substring(0.150)}... </p>
-                    <Box p={1}>
-                    </Box>
-                    <Button on to="/ArticlesPage" variant="contained" color="primary">
+                    <Box p={1}></Box>
+                    <Button variant="contained" color="primary">
                         <Link style={{ textDecoration: 'none', color: "white" }} key={key} to={`/article/${article.name}`}>View Article</Link>
                     </Button>
-                    <Box p={2}>
-                    </Box>
+                    <Box p={2}></Box>
                 </Link>
             ))
             }

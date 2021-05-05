@@ -1,4 +1,8 @@
 import React from 'react'
+import Typography from '@material-ui/core/Typography';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 function UpvotesSection({ articleName, upvotes, setArticleInfo }) {
 
@@ -9,9 +13,24 @@ function UpvotesSection({ articleName, upvotes, setArticleInfo }) {
         setArticleInfo(body);
     }
     return (
-        <div className='upvotes-section'>
-            <p>Upvotes: {upvotes} </p>
-            <button onClick={upvoteArticle}>Add Upvote</button>
+        <div style={{ textAlign: "left" }} className='upvotes-section'>
+            <Typography variant="overline" gutterBottom>
+                Upvotes:{upvotes}
+            </Typography>
+            {" "}
+            <Button
+                variant="contained"
+                color="primary"
+                startIcon={<ArrowUpwardIcon />}
+                onClick={upvoteArticle}
+                size="sm"
+            >
+                Upvote
+            </Button>
+            {"   "}
+            <Button to="/ArticlesPage" variant="contained" color="primary">
+                <Link className='links' to="/ArticlesPage">Back to Articles</Link>
+            </Button>
         </div>
     )
 }

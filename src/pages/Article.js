@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import articleSource from './Article-content';
 import ArticlesList from '../components/ArticlesList'
-import { findRenderedDOMComponentWithClass } from 'react-dom/test-utils';
 import CommentsList from "../components/CommentsList";
 import UpvotesSection from '../components/UpvotesSection'
 import AddCommentForm from "../components/AddCommentForm";
+
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+
 function Article({ match }) {
 
     const name = match.params.name; //passed from the route
@@ -24,22 +29,35 @@ function Article({ match }) {
         fetchData();
     }, [name]);
 
-    console.log(articleInfo)
     return (
         !article ? <div>Article does not exist</div> :
-            <div>
-                <h1> {article.title}</h1>
+            <Container maxWidth="lg" text>
+                <Typography variant="h3" component="h3">
+                    {article.title}
+                </Typography>
+                <Box p={2}></Box>
                 {article.content.map((paragraph, key) => (
-                    <p key={key}>{paragraph}</p>
+                    <Typography variant="body1" key={key}>{paragraph}</Typography>
                 ))}
                 <UpvotesSection articleName={name} upvotes={articleInfo.upvotes} setArticleInfo={setArticleInfo} />
-                <h3>Commnets:</h3>
-                <CommentsList comments={articleInfo.comments} />
-                <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
-                <h3>Other Articles:</h3>
-                <ArticlesList articles={otherArticles} />
+                <Box p={2}></Box>
+                <Box p={2}></Box>
 
-            </div>
+                <div style={{ textAlign: "left" }}>
+                    <Typography variant="h4" component="h4">
+                        Recent Commnets:
+                </Typography>
+                    <Grid container spacing={3}>
+                        <Grid item xs={4}>
+                        <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
+                        </Grid>
+                        <Grid item xs={8}>
+                        <CommentsList comments={articleInfo.comments} />
+                        </Grid>
+                    </Grid>
+                </div>
+                {/* <ArticlesList articles={otherArticles} /> */}
+            </Container>
     )
 
 }

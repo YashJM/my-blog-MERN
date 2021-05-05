@@ -52,7 +52,7 @@ function HomePage() {
                     </ListItemIcon>
                     <ListItemText primary="CRUD operations in MongoDb" />
                 </ListItem>
-                <Button on to="/ArticlesPage" variant="contained" color="primary">
+                <Button  to="/ArticlesPage" variant="contained" color="primary">
                     <Link className='links' to="/ArticlesPage">Browse the Articles</Link>
                 </Button>
             </List>
