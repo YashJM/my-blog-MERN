@@ -1,6 +1,6 @@
 # My-Blog-MERN
 <p align="center">
-  <strong>A simple basic App that I have created to learn React.Js , Node.js and MongoDB which performs some of the basic CRUD operations</strong>
+  <strong>A simple basic App that I have created to learn React.Js ⚛️ , Node.js and MongoDB which performs some of the basic CRUD operations</strong>
 </p>
 
 <h3>
